@@ -23,7 +23,7 @@ const UserSchema = Schema({
 
 UserSchema.method('toJSON', function () {
     // not show the data in the object "__v, _id, password,online" and create a new object "... object"
-    const {__v, _id, password,online, ... object } = this.toObject();
+    const {__v, _id, password, ... object } = this.toObject();
     object.uid = _id;
     return object;
 });
