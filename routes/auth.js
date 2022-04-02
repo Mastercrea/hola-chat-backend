@@ -1,14 +1,13 @@
+/*
+    path: api/login
+
+*/
+
 const {Router} = require('express');
 const {check} = require("express-validator");
 const {createUser, login, renewToken} = require("../controller/auth");
 const {validateData} = require("../middlewares/validate-data");
 const {validateJWT} = require("../middlewares/validate-jwt");
-
-
-/*
-    path: api/login
-
-*/
 
 
 const router = Router();
