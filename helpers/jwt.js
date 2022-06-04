@@ -14,9 +14,7 @@ return new Promise( ((resolve, reject) => {
         } else {
             // Token
             resolve(token);
-
         }
-
     });
 }))
 
