@@ -26,6 +26,7 @@ io.on('connection', (client) => {
     client.on('personal-message', async (payload) => {
         await saveMessage(payload);
         io.to(payload.for).emit('personal-message', payload);
+        io.to(payload.for).emit('personal-notification', payload);
     });
     console.log('client online');
 
