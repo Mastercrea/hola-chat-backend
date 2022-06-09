@@ -7,7 +7,7 @@ const { userConnected, userDisconnected, saveMessage } = require('../controller/
 
 // Socket's messages
 io.on('connection', (client) => {
-    // console.log('authenticating client');
+     console.log('authenticating client');
 
     const [isValid, uid] = checkJWT(client.handshake.headers['x-token']);
     // verify authentication

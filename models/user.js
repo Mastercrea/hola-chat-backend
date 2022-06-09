@@ -15,6 +15,13 @@ const UserSchema = Schema({
         type: String,
         required: true,
     },
+    img: {
+        type: String
+    },
+    google: {
+        type: Boolean,
+        default: false
+    },
     online: {
         type: Boolean,
         default: false
