@@ -99,7 +99,7 @@ const renewToken = async (req, res = response) => {
 
 const googleAuth = async (req, res = response) => {
     try {
-        const token = req.body.token;
+        const tokenGoogle = req.body.token;
         const {name, picture, email} = await varlidateGoogleIdToken(token);
         let user = await User.findOne({email});
         if (!user) {
@@ -114,17 +114,16 @@ const googleAuth = async (req, res = response) => {
 
             user = new User(data);
             await user.save();
-                    // Generate JWT
-        const token = await generateJWT(user.id);
 
         }
 
-        if (!token) {
+        if (!tokenGoogle) {
             return res.json({
                 ok: false,
                 msg: 'Token not found'
             })
         }
+        const token = await generateJWT(user.id);
         res.json({
             ok: true,
             user,
