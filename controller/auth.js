@@ -1,5 +1,6 @@
 const { response } = require('express');
 const bcrypt = require('bcryptjs');
+const {varlidateGoogleIdToken} = require('../helpers/google-verify-token');
 const User = require('../models/user');
 const {generateJWT} = require("../helpers/jwt");
 
@@ -78,7 +79,6 @@ const login = async (req, res = response) => {
             ok: false,
             msg: 'talk with the administrator'
         });
-        console.log(err);
     }
 
 }
@@ -97,8 +97,36 @@ const user = await User.findById(uid);
 
 }
 
+const googleAuth = async (req, res = response) => {
+    console.log('googleAuth');
+    const token = req.body.token;
+    const googleUser = await varlidateGoogleIdToken(token);
+
+    if (!googleUser) {
+
+        return res.status(400).json({
+            ok: false
+        })
+
+    }
+
+    if (!token) {
+        return res.json({
+            ok: false,
+            msg: 'Token not found'
+        })
+    }
+    // TODO: Save in DataBase
+    res.json({
+        ok: true,
+        googleUser
+    });
+
+};
+
 module.exports = {
     createUser,
     login,
-    renewToken
+    renewToken,
+    googleAuth
 };

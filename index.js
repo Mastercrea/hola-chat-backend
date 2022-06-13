@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 require('dotenv').config();
 
@@ -13,6 +14,8 @@ const app = express();
 
 // Lectura y parseo del body
 app.use(express.json());
+// body-parse
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Node Server
 const server = require('http').createServer(app);
@@ -36,8 +39,8 @@ app.use('/api/messages', require('./routes/messages'));
 app.use('/api/uploads', require('./routes/uploads'));
 
 
-
-server.listen(process.env.PORT, '192.168.31.226', (err) => {
+  server.listen(process.env.PORT, '192.168.31.226', (err) => {
+ // server.listen(process.env.PORT, (err) => {
 
     if (err) throw new Error(err);
 

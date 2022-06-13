@@ -16,7 +16,6 @@ const getUser = async (req, res = response) => {
 
 
 
-console.log(users);
     res.json({
         ok: true,
         users: users
