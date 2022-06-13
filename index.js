@@ -39,8 +39,8 @@ app.use('/api/messages', require('./routes/messages'));
 app.use('/api/uploads', require('./routes/uploads'));
 
 
-  server.listen(process.env.PORT, '192.168.31.226', (err) => {
- // server.listen(process.env.PORT, (err) => {
+//  server.listen(process.env.PORT, '192.168.31.226', (err) => {
+ server.listen(process.env.PORT, (err) => {
 
     if (err) throw new Error(err);
 
