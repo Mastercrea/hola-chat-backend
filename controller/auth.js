@@ -115,10 +115,6 @@ const googleAuth = async (req, res = response) => {
             user = new User(data);
             await user.save();
 
-            return res.status(400).json({
-                ok: false
-            })
-
         }
 
         if (!token) {
