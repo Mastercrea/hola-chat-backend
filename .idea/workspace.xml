@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cfea8b3-e0a5-4c43-aeac-566b59a6ea64" name="Default Changelist" comment="new user status socket">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +183,7 @@
       <workItem from="1654718570123" duration="325000" />
       <workItem from="1654718905822" duration="1798000" />
       <workItem from="1654815714701" duration="201000" />
-      <workItem from="1655146697373" duration="1675000" />
+      <workItem from="1655146697373" duration="1979000" />
     </task>
     <task id="LOCAL-00001" summary="change variable name">
       <created>1648600606666</created>
@@ -233,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655147020579</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changes in server config">
+      <created>1655148420646</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655148420646</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -284,7 +292,8 @@
     <MESSAGE value="personal notification socket added" />
     <MESSAGE value="User image upload service Added" />
     <MESSAGE value="Google sign in service added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Google sign in service added" />
+    <MESSAGE value="changes in server config" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes in server config" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/helpers/jwt.js">
