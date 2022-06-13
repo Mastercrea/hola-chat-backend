@@ -108,7 +108,7 @@ const googleAuth = async (req, res = response) => {
                 name,
                 email,
                 password: '-',
-                picture,
+                img: picture,
                 google: true,
             };
 
