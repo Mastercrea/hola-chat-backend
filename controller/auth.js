@@ -114,6 +114,8 @@ const googleAuth = async (req, res = response) => {
 
             user = new User(data);
             await user.save();
+                    // Generate JWT
+        const token = await generateJWT(user.id);
 
         }
 
@@ -125,7 +127,8 @@ const googleAuth = async (req, res = response) => {
         }
         res.json({
             ok: true,
-            user
+            user,
+            token
         });
     } catch (error) {
 
