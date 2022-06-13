@@ -98,7 +98,7 @@ const renewToken = async (req, res = response) => {
 const googleAuth = async (req, res = response) => {
     try {
         const tokenGoogle = req.body.token;
-        const {name, picture, email} = await varlidateGoogleIdToken(token);
+        const {name, picture, email} = await varlidateGoogleIdToken(tokenGoogle);
         let user = await User.findOne({email});
         if (!user) {
 
