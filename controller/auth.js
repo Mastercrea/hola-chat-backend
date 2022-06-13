@@ -1,15 +1,15 @@
-const { response } = require('express');
+const {response} = require('express');
 const bcrypt = require('bcryptjs');
-const { varlidateGoogleIdToken } = require('../helpers/google-verify-token');
+const {varlidateGoogleIdToken} = require('../helpers/google-verify-token');
 const User = require('../models/user');
-const { generateJWT } = require("../helpers/jwt");
+const {generateJWT} = require("../helpers/jwt");
 
 const createUser = async (req, res = response) => {
     // extract specific data from body
-    const { email, password } = req.body;
+    const {email, password} = req.body;
 
     try {
-        const existsEmail = await User.findOne({ email });
+        const existsEmail = await User.findOne({email});
         if (existsEmail) {
             return res.status(400).json({
                 ok: false,
@@ -44,9 +44,9 @@ const createUser = async (req, res = response) => {
 
 const login = async (req, res = response) => {
     // extract specific data from body
-    const { email, password } = req.body;
+    const {email, password} = req.body;
     try {
-        const userDB = await User.findOne({ email });
+        const userDB = await User.findOne({email});
         if (!userDB) {
 
             return res.status(404).json({
@@ -72,9 +72,7 @@ const login = async (req, res = response) => {
         });
 
 
-
-    }
-    catch (err) {
+    } catch (err) {
         return res.status(500).json({
             ok: false,
             msg: 'talk with the administrator'
@@ -136,7 +134,6 @@ const googleAuth = async (req, res = response) => {
             msg: 'Token not valid'
         });
     }
-
 
 
 };
